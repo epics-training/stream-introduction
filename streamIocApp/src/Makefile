@@ -55,7 +55,7 @@ testIoc_DBD += initTrace.dbd
 testIoc_DBD += asyn.dbd
 testIoc_DBD += drvAsynSerialPort.dbd
 testIoc_DBD += drvAsynIPPort.dbd
-testIoc_DBD += calc.dbd
+#testIoc_DBD += calc.dbd
 testIoc_DBD += stream.dbd
 testIoc_DBD += xxxSupport.dbd
 
@@ -69,7 +69,7 @@ testIoc_SRCS_vxWorks += -nil-
 # Link in the code from our support library
 testIoc_LIBS += testIocSupport
 testIoc_LIBS += asyn
-testIoc_LIBS += calc
+#testIoc_LIBS += calc
 testIoc_LIBS += stream 
 
 # To build SNL programs, SNCSEQ must be defined
