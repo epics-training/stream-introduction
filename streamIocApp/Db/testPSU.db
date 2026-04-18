@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 1998 Argonne National Laboratory
+#
+# SPDX-License-Identifier: EPICS
+
+record(stringin, "$(user):IDN")
+{
+	field(DESC, "Device identification")
+	field(DTYP, "stream")
+	field(INP, "@PSU.proto idn PSU0")
+	field(PINI, "YES")
+
+}
+record(bo, "$(user):POWER-CM")
+{
+	field(DESC, "Power switch command")
+	field(DTYP, "stream")
+	field(OUT, "@PSU.proto power-cm PSU0")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(FLNK, "$(user):POWER-RB")
+}
+record(bi, "$(user):POWER-RB")
+{
+	field(DESC, "Power switch readback")
+	field(DTYP, "stream")
+	field(INP, "@PSU.proto power-rb PSU0")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(PINI, "YES")
+}
+
+record(ao, "$(user):V-SET-CM")
+{
+	field(DESC, "Voltage setpoint command")
+	field(DTYP, "stream")
+	field(OUT, "@PSU.proto v-set-cm PSU0")
+	field(DRVL, "-10")
+	field(DRVH, "10")
+	field(EGU, "V")
+	field(LOPR, "-10")
+	field(HOPR, "10")
+	field(PREC, "2")
+	
+	field(FLNK, "$(user):V-SET-RB.PROC")
+}
+record(ai, "$(user):V-SET-RB")
+{
+	field(DESC, "Voltage setpoint readback")
+	field(DTYP, "stream")
+	field(INP, "@PSU.proto v-set-rb PSU0")
+	field(EGU, "V")
+	field(LOPR, "-10")
+	field(HOPR, "10")
+	field(PREC, "2")
+	field(PINI, "YES")
+}
+record(ai, "$(user):V-OUT")
+{
+	field(DESC, "Measured output voltage")
+	field(DTYP, "stream")
+	field(INP, "@PSU.proto v-out PSU0")
+	field(EGU, "V")
+	field(LOPR, "-10")
+	field(HOPR, "10")
+	field(PREC, "2")
+	field(SCAN, ".5 second")
+}
+
