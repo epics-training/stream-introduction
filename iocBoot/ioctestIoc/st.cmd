@@ -22,8 +22,7 @@ asynOctetSetInputEos("PSU0", 0, "\r\n")
 asynOctetSetOutputEos("PSU0", 0, "\r\n")
 
 ## Load record instances
-dbLoadTemplate "db/user.substitutions"
-#dbLoadRecords "db/testIocVersion.db", "user=epics-dev"
+dbLoadRecords "db/testPSU.db", "user=epics-dev"
 #dbLoadRecords "db/dbSubExample.db", "user=epics-dev"
 
 #- Set this to see messages from mySub

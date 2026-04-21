@@ -8,12 +8,9 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS BELOW HERE
 
 # Install databases, templates & substitutions like this
-DB += circle.db
-DB += dbExample1.db
-DB += dbExample2.db
 DB += testIocVersion.db
 DB += dbSubExample.db
-DB += user.substitutions
+DB += testPSU.db
 
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>
