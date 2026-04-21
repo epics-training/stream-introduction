@@ -11,6 +11,7 @@
 
 cd "${TOP}"
 
+epicsEnvSet("STREAM_PROTOCOL_PATH","$(TOP)/iocBoot/StreamProto"
 
 ## Register all support components
 dbLoadDatabase "dbd/testIoc.dbd"
