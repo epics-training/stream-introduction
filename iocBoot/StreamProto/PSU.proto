@@ -1,0 +1,27 @@
+# Stream protocol file for simulated PS
+idn	{
+	out "*IDN?";
+	in "%s";
+	}
+power-rb {
+	out "POWER?";
+	in "%{OFF|ON}";
+	}
+v-out {
+	out "VOUT?";
+	in "%f";
+	}
+v-set-rb {
+	out "VSET?";
+	in "%f";
+	}
+power-cm {
+	out "POWER %{OFF|ON}";
+	in "POWER SWITCHED %{OFF|ON}";
+	@init {power-rb;}
+	}
+v-set-cm {
+	out "VSET %f";
+	in "VOLTAGE SET TO %f";
+	@init {v-set-rb;}
+	}

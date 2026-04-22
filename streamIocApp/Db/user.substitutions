@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2006 Argonne National Laboratory
+#
+# SPDX-License-Identifier: EPICS
+
+# Example substitutions file
+
+file "db/circle.db" {
+    { user = "epics-dev" }
+}
+
+file "db/dbExample1.db" {
+    { user = "epics-dev" }
+}
+
+file db/dbExample2.db {
+    pattern { user, no, scan }
+        { "epics-dev", 1, "1 second" }
+        { "epics-dev", 2, "2 second" }
+        { "epics-dev", 3, "5 second" }
+}
